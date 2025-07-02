@@ -36,9 +36,12 @@ spec:
     image: "$(params.gcloud-image):$(params.version)"
     # script: |
     #   $(params.SCRIPT)
-    # args: ["$(params.ARGS)"]
+    # script: |
+    #     #!/usr/bin/env bash
+    #     set -eux
+    #     COMMAND_OUTPUT=$($(params.SCRIPT) "${params.ARGS[@]}")
+    #     echo "$COMMAND_OUTPUT" | tee "$(results.gcloud-output.path)"
     script: |
-        #!/usr/bin/env bash
-        set -eux
-        COMMAND_OUTPUT=$($(params.SCRIPT) "${params.ARGS[@]}")
-        echo "$COMMAND_OUTPUT" | tee "$(results.gcloud-output.path)"
+      #!/bin/bash
+      echo -n "hello world" | tee $(results.gcloud-output.path)
+    args: ["$(params.ARGS)"]
