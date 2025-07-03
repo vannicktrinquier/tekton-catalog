@@ -35,7 +35,9 @@ spec:
   - name: gcloud
     image: "$(params.gcloud-image):$(params.version)"
     script: |
-      RESULT_GCLOUD="$(params.SCRIPT)"
+      CMD="$(params.SCRIPT)"
+      RESULT_GCLOUD="$($CMD)"
+      
       EXIT_CODE="$?"
       if [ "$EXIT_CODE" != 0 ]
       then
