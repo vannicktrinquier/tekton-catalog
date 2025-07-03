@@ -22,11 +22,11 @@ spec:
     default: "slim" # latest slim version
   - name: ARGS
     description: gcloud CLI arguments to run
-    default: "help"
+    default: "version"
   - name: SCRIPT
     description: CLI script to execute
     type: string
-    default: "gcloud $(params.ARGS)"
+    default: "gcloud"
   results:
   - name: gcloud-output
     description: The stdout output of the gcloud command.
@@ -34,7 +34,7 @@ spec:
   - name: gcloud
     image: "$(params.gcloud-image):$(params.version)"
     script: |
-      CMD="$(params.SCRIPT)"
+      CMD="gcloud $(params.ARGS)"
       echo -n "Executing following gcloud command: $CMD"
       RESULT_GCLOUD="$($CMD)"
 
