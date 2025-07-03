@@ -43,5 +43,5 @@ spec:
     #     echo "$COMMAND_OUTPUT" | tee "$(results.gcloud-output.path)"
     script: |
       #!/bin/bash
-      echo -n "hello world" | tee $(results.gcloud-output.path)
+      echo -n "ARGS: $(params.ARGS)" | tee $(results.gcloud-output.path)
     args: ["$(params.ARGS)"]
