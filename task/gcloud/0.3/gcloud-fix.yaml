@@ -23,10 +23,6 @@ spec:
   - name: ARGS
     description: gcloud CLI arguments to run
     default: "version"
-  - name: SCRIPT
-    description: CLI script to execute
-    type: string
-    default: "gcloud"
   results:
   - name: gcloud-output
     description: The stdout output of the gcloud command.
