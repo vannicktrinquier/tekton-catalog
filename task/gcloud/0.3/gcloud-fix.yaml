@@ -43,6 +43,6 @@ spec:
     #     echo "$COMMAND_OUTPUT" | tee "$(results.gcloud-output.path)"
     script: |
       #!/bin/bash
-      my-args= ${params.ARGS}
-      echo -n "ARGS: ${my-args" | tee $(results.gcloud-output.path)
+      my-args=${params.ARGS}
+      echo -n "ARGS: $my-args" | tee $(results.gcloud-output.path)
     args: ["$(params.ARGS)"]
