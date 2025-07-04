@@ -35,7 +35,7 @@ spec:
       RESULT_GCLOUD="$($CMD 2>&1 || true)"
       EXIT_CODE=$?
       echo -n "$RESULT_GCLOUD" > $(results.gcloud-output.path)
-      # if [ "$EXIT_CODE" != 0 ]
-      # then
-      #   exit $EXIT_CODE
-      # fi
+      if [ "$EXIT_CODE" != 0 ]
+      then
+        exit $EXIT_CODE
+      fi
