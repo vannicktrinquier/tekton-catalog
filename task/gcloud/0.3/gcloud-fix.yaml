@@ -33,10 +33,10 @@ spec:
       CMD="gcloud $(params.ARGS)"
       echo -n "Executing following gcloud command: $CMD"
       RESULT_GCLOUD="$($CMD)"
-
       EXIT_CODE="$?"
+
+      echo -n "$RESULT_GCLOUD" > $(results.gcloud-output.path)
       if [ "$EXIT_CODE" != 0 ]
       then
         exit $EXIT_CODE
       fi
-      echo -n "$RESULT_GCLOUD" > $(results.gcloud-output.path)
