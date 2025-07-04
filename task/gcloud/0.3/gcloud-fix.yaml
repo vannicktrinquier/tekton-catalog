@@ -34,7 +34,7 @@ spec:
       echo -n "Executing following gcloud command: $CMD"
       RESULT_GCLOUD="$($CMD 2>&1 || true)"
       EXIT_CODE=$?
-      if [ "$EXIT_CODE" != 0 ]
-      then
-        exit $EXIT_CODE
-      fi
+      # if [ "$EXIT_CODE" != 0 ]
+      # then
+      #   exit $EXIT_CODE
+      # fi
