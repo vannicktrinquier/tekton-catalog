@@ -34,6 +34,8 @@ spec:
       echo -n "Executing following gcloud command: $CMD"
       RESULT_GCLOUD="$($CMD)"
       echo -n "$RESULT_GCLOUD" > $(results.gcloud-output.path)
+      echo "Result"
+      cat $(results.gcloud-output.path)
       exit 0
       
       # EXIT_CODE="$?"
